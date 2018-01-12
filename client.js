@@ -9,7 +9,9 @@ var options = {
 };
 
 request(options, function(err, res, body) {  
-    if (res.statusCode < 400) {
+    if (err) {
+        return false;
+    } else if (res.statusCode < 400) {
         return true;
     } else {
         return false;
