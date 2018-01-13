@@ -3,13 +3,12 @@ let port = process.env.PORT || 3000;
 let morgan = require('morgan');
 let express = require('express');
 let bodyParser = require('body-parser');
-let favicon = require('serve-favicon');
 let rp = require('request-promise');
 
 let app = express();
 
 // Static Files
-
+app.use(express.static(path.join(__dirname, 'public', 'dist')));
 
 // Middleware (Logging)
 app.use(morgan('dev'));

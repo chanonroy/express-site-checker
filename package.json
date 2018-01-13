@@ -5,17 +5,37 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --hot --inline",
+    "build": "cross-env NODE_ENV=prod webpack --hide-modules",
+    "server": "nodemon app.js"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
-    "request-promise": "^4.2.2",
-    "serve-favicon": "^2.4.5"
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.8",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
     "nodemon": "^1.14.11",
-    "webpack": "^3.10.0"
+    "postcss-loader": "^2.0.10",
+    "sass-loader": "^6.0.6",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1"
   }
 }
